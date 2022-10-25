@@ -1,14 +1,35 @@
-import express from 'express';
+import "reflect-metadata";
+import express, {Response,Request,NextFunction} from 'express';
 
-import { produtsRoutes } from './routes/produts.routes';
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from './Document/swagger.json';
 
+
+import "./database";
+import "express-async-errors";
+
+import {router} from './routes';
 
 
 const app = express();
 
 app.use(express.json())
 
-app.use("/produts",produtsRoutes)
+app.use('/docs-Apis', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+app.use(router)
 
-app.listen(3001,() => console.log("server is running!"));
+app.use((err:Error, request:Request, response:Response, next:NextFunction) => {
+  if(err instanceof Error)
+  {
+    return response.status(400).json({ 
+      error : err.message
+    })
+  }
+  return response.status(500).json({
+    status :"error",
+    message :"Internal Server Error",
+  })
+})
+
+app.listen(3000,()=>console.log("server is running on port 3000"));

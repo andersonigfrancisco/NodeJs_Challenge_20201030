@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Test-Apis",
-    "description": "Documentation from TestApi Time <br><br> https://github.com/andersonigfrancisco <br><br> repository: https://github.com/andersonigfrancisco/AdOpt-Test"
+    "title": "Test-NodeJs_Challenge_20201030",
+    "description": "Documentation from NodeJs_Challenge_20201030 Time <br><br> https://github.com/andersonigfrancisco <br><br> repository: https://github.com/andersonigfrancisco/NodeJs_Challenge_20201030"
   },
   "host": "localhost:3000",
   "basePath": "/",
@@ -69,7 +69,7 @@
         }
       }
     },
-    "/list-format": {
+    "/list-Categories": {
       "get": {
         "tags": [],
         "description": "",
@@ -89,126 +89,7 @@
         }
       }
     },
-    "/create-format": {
-      "post": {
-        "tags": [],
-        "description": "",
-        "produces": [
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "name": "obj",
-            "in": "body",
-            "type": "obj",
-            "properties":{
-              "types":{
-                "type":"string"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500":{
-            "description": "Internal Server Error"
-          },
-          "400": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "/delete-format": {
-      "delete": {
-        "tags": [],
-        "description": "",
-        "produces": [
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "body",
-            "type": "obj",
-            "properties":{
-              "id":{
-                "type":"string"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500":{
-            "description": "Internal Server Error"
-          },
-          "400": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "/update-format": {
-      "put": {
-        "tags": [],
-        "description": "",
-        "produces": [
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "name": "obj",
-            "in": "body",
-            "type": "obj",
-            "properties":{
-              "id":{
-                "type":"string"
-              },
-              "types":{
-                "type":"string"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500":{
-            "description": "Internal Server Error"
-          },
-          "400": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "/list-flavor": {
-      "get": {
-        "tags": [],
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500":{
-            "description": "Internal Server Error"
-          },
-          "400": {
-            "description": "Not Found"
-          }
-        }
-      }
-    },
-    "/create-flavor": {
+    "/create-Categories": {
       "post": {
         "tags": [],
         "description": "",
@@ -240,7 +121,7 @@
         }
       }
     },
-    "/delete-flavor": {
+    "/delete-Categories": {
       "delete": {
         "tags": [],
         "description": "",
@@ -272,7 +153,7 @@
         }
       }
     },
-    "/update-flavor": {
+    "/update-Categories": {
       "put": {
         "tags": [],
         "description": "",
@@ -307,7 +188,7 @@
         }
       }
     },
-    "/list-cookies": {
+    "/list-PurchasePlaces": {
       "get": {
         "tags": [],
         "description": "",
@@ -327,7 +208,7 @@
         }
       }
     },
-    "/create-cookies": {
+    "/create-PurchasePlaces": {
       "post": {
         "tags": [],
         "description": "",
@@ -341,15 +222,6 @@
             "type": "obj",
             "properties":{
               "name":{
-                "type":"string"
-              },
-              "Flavor_id":{
-                "type":"string"
-              },
-              "Format_id":{
-                "type":"string"
-              },
-              "descrition":{
                 "type":"string"
               }
             }
@@ -368,7 +240,7 @@
         }
       }
     },
-    "/delete-cookies": {
+    "/delete-PurchasePlaces": {
       "delete": {
         "tags": [],
         "description": "",
@@ -400,7 +272,7 @@
         }
       }
     },
-    "/update-cookies": {
+    "/update-PurchasePlaces": {
       "put": {
         "tags": [],
         "description": "",
@@ -417,15 +289,6 @@
                 "type":"string"
               },
                 "name":{
-                  "type":"string"
-                },
-                "Flavor_id":{
-                  "type":"string"
-                },
-                "Format_id":{
-                  "type":"string"
-                },
-                "descrition":{
                   "type":"string"
                 }
             }
@@ -444,7 +307,7 @@
         }
       }
     },
-    "/list-pots": {
+    "/list-Cities": {
       "get": {
         "tags": [],
         "description": "",
@@ -464,7 +327,7 @@
         }
       }
     },
-    "/create-pots": {
+    "/create-Cities": {
       "post": {
         "tags": [],
         "description": "",
@@ -480,13 +343,8 @@
               "name":{
                 "type":"string"
               },
-              "quantity":{
-                "type":"number"
-              },
-              "Cookie_id":{
-                "type":"string"
-              },
-              "descrition":{
+              
+              "PurchasePlaces_id":{
                 "type":"string"
               }
             }
@@ -505,7 +363,7 @@
         }
       }
     },
-    "/delete-pots": {
+    "/delete-Cities": {
       "delete": {
         "tags": [],
         "description": "",
@@ -537,7 +395,7 @@
         }
       }
     },
-    "/update-pots": {
+    "/update-Cities": {
       "put": {
         "tags": [],
         "description": "",
@@ -556,15 +414,10 @@
               "name":{
                 "type":"string"
               },
-              "quantity":{
-                "type":"number"
-              },
-              "Cookie_id":{
-                "type":"string"
-              },
-              "descrition":{
+              "PurchasePlaces_id":{
                 "type":"string"
               }
+
             }
           }
         ],
@@ -719,5 +572,4 @@
       }
     }
   }
-  
 }

@@ -1,6 +1,6 @@
 FROM node:12.18.0
 
-WORKDIR /NodeJs_Challenge_20201030
+WORKDIR /AdOptTest
 
 COPY package*.json ./
 

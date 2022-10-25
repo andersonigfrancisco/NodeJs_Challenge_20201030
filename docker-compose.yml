@@ -3,12 +3,12 @@ version: "3.7"
 services:
 
   app:
-    container_name: NodeJs_Challenge_20201030
+    container_name: AdOptTest-api
     restart: always
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./src:/NodeJs_Challenge_20201030/src
+      - ./src:/AdOptTest/src
     ports:
       - "3000:3022"

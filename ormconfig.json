@@ -4,7 +4,7 @@
   "port": 3306,
   "username": "root",
   "password": "",
-  "database": "AdOpt",
+  "database": "NodeJsChallenge",
   "migrations": ["src/database/migrations/*.ts"],
   "entities": ["src/models/*.ts"],
   "cli": {

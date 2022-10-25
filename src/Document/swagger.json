@@ -1,0 +1,723 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Test-Apis",
+    "description": "Documentation from TestApi Time <br><br> https://github.com/andersonigfrancisco <br><br> repository: https://github.com/andersonigfrancisco/AdOpt-Test"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    },
+    "petstore_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "https://petstore.swagger.io/oauth/authorize",
+      "flow": "implicit",
+      "scopes": {
+        "read_pets": "read your pets",
+        "write_pets": "modify pets in your account"
+      }
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "email":{
+                "type":"string"
+              },
+              "password":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/list-format": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/create-format": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "types":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/delete-format": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "id":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/update-format": {
+      "put": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "id":{
+                "type":"string"
+              },
+              "types":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/list-flavor": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/create-flavor": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "name":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/delete-flavor": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "id":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/update-flavor": {
+      "put": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "id":{
+                "type":"string"
+              },
+              "name":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/list-cookies": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/create-cookies": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "name":{
+                "type":"string"
+              },
+              "Flavor_id":{
+                "type":"string"
+              },
+              "Format_id":{
+                "type":"string"
+              },
+              "descrition":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/delete-cookies": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "id":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/update-cookies": {
+      "put": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "id":{
+                "type":"string"
+              },
+                "name":{
+                  "type":"string"
+                },
+                "Flavor_id":{
+                  "type":"string"
+                },
+                "Format_id":{
+                  "type":"string"
+                },
+                "descrition":{
+                  "type":"string"
+                }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/list-pots": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/create-pots": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "name":{
+                "type":"string"
+              },
+              "quantity":{
+                "type":"number"
+              },
+              "Cookie_id":{
+                "type":"string"
+              },
+              "descrition":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/delete-pots": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "id":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/update-pots": {
+      "put": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "id":{
+                "type":"string"
+              },
+              "name":{
+                "type":"string"
+              },
+              "quantity":{
+                "type":"number"
+              },
+              "Cookie_id":{
+                "type":"string"
+              },
+              "descrition":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/list-user": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/create-user": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "name":{
+                "type":"string"
+              },
+              "email":{
+                "type":"string"
+              },
+              "admin":{
+                "type":"boolean"
+              },
+              "password":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/delete-user": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "id":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/update-user": {
+      "put": {
+        "tags": [],
+        "description": "",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "type": "obj",
+            "properties":{
+              "id":{
+                "type":"string"
+              },
+              "name":{
+                "type":"string"
+              },
+              "email":{
+                "type":"string"
+              },
+              "admin":{
+                "type":"boolean"
+              },
+              "password":{
+                "type":"string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500":{
+            "description": "Internal Server Error"
+          },
+          "400": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  }
+  
+}

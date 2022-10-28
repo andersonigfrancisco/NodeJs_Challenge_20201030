@@ -1,26 +1,33 @@
-import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { Column, Entity, OneToMany } from 'typeorm';
 import { v4 as NewId } from 'uuid';
 
-@Entity("Categories")
-class Categories {
+import { Products } from './Products';
 
-  @PrimaryColumn()
-  id: string;
-
-  @Column()
-  name: string;
-
-  @CreateDateColumn()
-  created_at: Date;
-
-  @UpdateDateColumn()
-  update_at: Date;
-
+@Entity('Categories', { schema: 'public' })
+export class Categories {
   constructor() {
-
     if (!this.id) {
       this.id = NewId();
     }
   }
+  @Column('character varying', { primary: true, name: 'id' })
+  id: string;
+
+  @Column('character varying', { name: 'name' })
+  name: string;
+
+  @Column('timestamp without time zone', {
+    name: 'created_at',
+    default: () => 'now()',
+  })
+  createdAt: Date;
+
+  @Column('timestamp without time zone', {
+    name: 'update_at',
+    default: () => 'now()',
+  })
+  updateAt: Date;
+
+  @OneToMany(() => Products, (products) => products.categories)
+  products: Products[];
 }
-export { Categories }

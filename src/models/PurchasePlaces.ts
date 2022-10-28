@@ -1,30 +1,33 @@
-import {
-  Entity,
-  PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn, JoinColumn, ManyToOne, ManyToMany
-} from "typeorm";
+import { Column, Entity, OneToMany } from 'typeorm';
+import { v4 as NewId } from 'uuid';
 
-import { v4 as uuid } from 'uuid';
+import { Cities } from './Cities';
 
-
-
-@Entity("PurchasePlaces")
-
-class PurchasePlaces {
-  @PrimaryColumn()
-  readonly id: string;
-
-  @PrimaryColumn()
-  readonly name: string;
-
-  @CreateDateColumn()
-  created_at: Date;
-
-  @UpdateDateColumn()
-  update_at: Date;
-
+@Entity('PurchasePlaces', { schema: 'public' })
+export class PurchasePlaces {
   constructor() {
-    if (!this.id)
-      this.id = uuid();
+    if (!this.id) {
+      this.id = NewId();
+    }
   }
+  @Column('character varying', { primary: true, name: 'id' })
+  id: string;
+
+  @Column('character varying', { name: 'name' })
+  name: string;
+
+  @Column('timestamp without time zone', {
+    name: 'created_at',
+    default: () => 'now()',
+  })
+  createdAt: Date;
+
+  @Column('timestamp without time zone', {
+    name: 'update_at',
+    default: () => 'now()',
+  })
+  updateAt: Date;
+
+  @OneToMany(() => Cities, (cities) => cities.purchasePlaces)
+  cities: Cities[];
 }
-export { PurchasePlaces }

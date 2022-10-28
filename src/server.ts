@@ -1,35 +1,13 @@
-import "reflect-metadata";
-import express, {Response,Request,NextFunction} from 'express';
+import http from 'http';
 
-import swaggerUi from 'swagger-ui-express';
-import swaggerDocument from './Document/swagger.json';
+import app from './app';
 
 
-import "./database";
-import "express-async-errors";
 
-import {router} from './routes';
+const server = http.createServer(app);
 
+const PORT = process.env.PORT || 3333;
 
-const app = express();
-
-app.use(express.json())
-
-app.use('/docs-Apis', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
-app.use(router)
-
-app.use((err:Error, request:Request, response:Response, next:NextFunction) => {
-  if(err instanceof Error)
-  {
-    return response.status(400).json({ 
-      error : err.message
-    })
-  }
-  return response.status(500).json({
-    status :"error",
-    message :"Internal Server Error",
-  })
-})
-
-app.listen(3000,()=>console.log("server is running on port 3000"));
+server.listen(PORT, () => {
+  console.log(` === SERVER IS RUNNING ON PORT [${PORT}] === `);
+});

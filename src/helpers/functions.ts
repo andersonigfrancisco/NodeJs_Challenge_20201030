@@ -5,4 +5,4 @@ export const generateProductCode = () => {
   } while (pin > 99999999);
 
   return pin;
-};
+}
